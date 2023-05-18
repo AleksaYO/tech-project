@@ -1,0 +1,111 @@
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 48px;
+  width: 100%;
+}
+
+.container {
+  width: 1400px;
+}
+
+.item {
+  position: relative;
+  width: 340px;
+  height: 404px;
+  list-style: none;
+  padding: 20px 20px 36px 20px;
+
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+  box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
+  border-radius: 20px;
+}
+
+.img {
+  position: absolute;
+  border-radius: 50%;
+  top: 45%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  width: 73%;
+}
+
+.avatar-box {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  background-image: url("../../../images/elipse.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box-middle {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../../images//line.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box-top {
+  width: 100%;
+  height: 50%;
+  background-image: url("../../../images/picture.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box-bottom {
+  width: 100%;
+}
+
+.tweets {
+  margin-top: 62px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #ebd8ff;
+}
+
+.followers {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: 26px;
+  color: #ebd8ff;
+}
+
+.btn {
+  padding: 14px 28px 14px 28px;
+  width: 196px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.22;
+  border: none;
+  border-radius: 10px;
+  background-color: #ebd8ff;
+  cursor: pointer;
+}

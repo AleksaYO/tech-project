@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { lazy, useEffect } from "react";
+import "./App.css";
+import { Layout } from "./components/Layout/Layout";
+import { useDispatch, useSelector } from "react-redux";
+import { user } from "./redux/selectors";
+import { fetchCard } from "./redux/operations";
+import { Route, Routes } from "react-router-dom";
+import css from "./components/Main/Main.module.css";
+
+const Main = lazy(() => import("./components/Main/Main"));
+const HomePage = lazy(() => import("./components/Home/HomePage"));
 
 function App() {
-  const [count, setCount] = useState(0)
+  const users = useSelector(user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCard());
+  }, [dispatch]);
+
+  console.log(users);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className={css.container}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/cards" element={<Main />} />
+        </Route>
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
